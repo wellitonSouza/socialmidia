@@ -5,7 +5,7 @@ import { UserContext } from "../../UserContext";
 import useForm from "../../Hooks/useForm";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
-import useFetch from "../../Hooks/userFatch";
+import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
 
 export default function LoginCreate() {
