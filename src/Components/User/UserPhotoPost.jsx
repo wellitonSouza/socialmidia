@@ -36,7 +36,7 @@ export default function UserPhotoPost() {
   }
 
   React.useEffect(() =>{ 
-    if(data) navigate('/');
+    if(data) navigate('/conta');
   } ,[data,navigate])
 
   return (
