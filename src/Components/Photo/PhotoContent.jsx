@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
+import Image from "../Helper/Image";
 import PhotoComent from "./PhotoComents";
 import style from "./PhotoContent.module.css";
 import PhotoDelete from "./PhotoDelete";
@@ -11,7 +12,7 @@ export default function PhotoContent({ data }) {
   return (
     <div className={style.photo}>
       <div className={style.img}>
-        <img src={photo.src} alt={photo.title} />
+        <Image src={photo.src} alt={photo.title} />
       </div>
       <div className={style.datails}>
         <div>
