@@ -24,7 +24,7 @@ export default function FeedModal({photo, setModalPhoto}){
         <div className={style.modal} onClick={handleOutSideClick}>
             {error && <Error error={error} /> }
             {loading && <Loading />}
-            {data && <PhotoContent data={data}/>}
+            {data && <PhotoContent data={data} single={false}/>}
         </div>
     )
 }

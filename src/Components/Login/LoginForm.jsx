@@ -21,7 +21,6 @@ export default function LoginForm() {
     }
   }
 
-  console.log(stylesBtn);
 
   return (
     <section className="animeLeft">

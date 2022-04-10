@@ -5,7 +5,7 @@ import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
 import style from './PhotoComentsForm.module.css';
 
-export default function PhotoComentsForm({ id, setComments }) {
+export default function PhotoComentsForm({ id, setComments, single }) {
   const [comment, setComment] = React.useState("");
   const {request, error } = useFetch();
 
@@ -20,7 +20,7 @@ export default function PhotoComentsForm({ id, setComments }) {
   }
 
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
+    <form className={`${style.form} ${single ? style.single : ''}`} onSubmit={handleSubmit}>
       <textarea
         className={style.textarea}
         id="comment"

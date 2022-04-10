@@ -6,11 +6,11 @@ import PhotoComent from "./PhotoComents";
 import style from "./PhotoContent.module.css";
 import PhotoDelete from "./PhotoDelete";
 
-export default function PhotoContent({ data }) {
+export default function PhotoContent({ data, single }) {
   const { photo, comments } = data;
   const user = React.useContext(UserContext);
   return (
-    <div className={style.photo}>
+    <div className={`${style.photo} ${single ? style.single : ''}`}>
       <div className={style.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>
@@ -33,7 +33,7 @@ export default function PhotoContent({ data }) {
           </ul>
         </div>
       </div>
-      <PhotoComent id={photo.id} comment={comments} />
+      <PhotoComent id={photo.id} comment={comments} single={single}/>
     </div>
   );
 }

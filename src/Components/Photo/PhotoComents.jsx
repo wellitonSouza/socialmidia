@@ -14,15 +14,17 @@ export default function PhotoComents(props){
         commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
     }, [comments]);
 
+    console.log(props.single);
+
     return(
         <>
-            <ul ref={commentsSection} className={style.comments}>
+            <ul ref={commentsSection} className={`${style.comments} ${props.single ? style.single : ''}`}>
                 {comments && comments.map(comment => <li key={comment.comment_ID}>
                     <b>{comment.comment_author}: {' '}</b>
                     <span>{comment.comment_content}</span>
                 </li>) }
             </ul>
-            {login && <PhotoComentsForm id={props.id} setComments={setComments} />}
+            {login && <PhotoComentsForm id={props.id} setComments={setComments} single={props.single} />}
         </>
     )
 }
