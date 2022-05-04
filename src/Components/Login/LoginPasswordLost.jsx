@@ -5,10 +5,11 @@ import useForm from "../../Hooks/useForm";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import Error from "../Helper/Error";
+import Head from "../Helper/Head";
 
 export default function LoginPasswordLost() {
   const login = useForm();
-  const { loading, error, request } = useFetch();
+  const { data, loading, error, request } = useFetch();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -22,7 +23,8 @@ export default function LoginPasswordLost() {
   }
 
   return (
-    <section>
+    <section className="animeLeft">
+        <Head title="Perdeu a senha" />
       <h1 className="title">Perdeu a senha?</h1>
       {data ? <p style={{color: '#4c1'}}>{data}</p> : 
       <form onSubmit={handleSubmit}>
